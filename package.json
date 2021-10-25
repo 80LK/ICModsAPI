@@ -1,0 +1,17 @@
+{
+  "name": "icmodsapi",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "icmods",
+    "icmodsapi"
+  ],
+  "author": "80LK",
+  "license": "MIT"
+}
