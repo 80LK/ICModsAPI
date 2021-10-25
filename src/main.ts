@@ -162,6 +162,11 @@ namespace ICModsAPI {
 
 		return mod;
 	}
+
+	//alias
+	export function getModInfo(id: number, lang: Lang = Lang.EN) {
+		return description(id, lang);
+	};
 }
 
 export default ICModsAPI;
