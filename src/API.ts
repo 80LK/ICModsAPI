@@ -1,10 +1,8 @@
+import isInt from "./utils/isInt.js";
 import request from "./utils/request.js";
 
 namespace ICModsAPI {
 	const host: string = "https://icmods.mineprogramming.org/";
-	function isInt(x: number): boolean {
-		return parseInt(<string><any>x) == x;
-	}
 
 	export enum Lang {
 		RU = "ru",
