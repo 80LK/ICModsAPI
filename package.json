@@ -13,5 +13,8 @@
     "icmodsapi"
   ],
   "author": "80LK",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.11.4"
+  }
 }
