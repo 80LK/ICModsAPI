@@ -10,7 +10,10 @@
   },
   "keywords": [
     "icmods",
-    "icmodsapi"
+    "icmodsapi",
+    "horizon",
+    "icmod",
+    "innercore"
   ],
   "author": "80LK",
   "repository": "https://github.com/80LK/ICModsAPI",
