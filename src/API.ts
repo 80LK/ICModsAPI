@@ -2,7 +2,7 @@ import isInt from "./utils/isInt.js";
 import request from "./utils/request.js";
 
 namespace ICModsAPI {
-	const host: string = "https://icmods.mineprogramming.org/";
+	export const url: string = "https://icmods.mineprogramming.org/";
 
 	export enum Lang {
 		RU = "ru",
@@ -34,7 +34,7 @@ namespace ICModsAPI {
 			} catch (e) {
 				return JSON.parse(response.replace(/\'/g, "\""));
 			}
-		})(await request(`${host}/api/${method}?${query}`))
+		})(await request(`${url}/api/${method}?${query}`))
 
 		if (response.error)
 			throw new Error(response.error);
