@@ -144,7 +144,7 @@ namespace ICModsAPI {
 		const [mod, [advanceInfo]] = await Promise.all([method<ModInfo>("description", {
 			id: id,
 			lang: lang
-		}), await listForIDs([id])]);
+		}), listForIDs([id])]);
 
 		mod.vip = !!mod.vip;
 		mod.pack = !!mod.pack;
