@@ -1,0 +1,4 @@
+.gitattributes
+.gitignore
+src
+node_modules
