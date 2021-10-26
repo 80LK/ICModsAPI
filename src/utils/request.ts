@@ -8,14 +8,8 @@ enum Method {
 	GET = "get",
 	POST = "post"
 }
-interface RequestParams {
-	url: Link;
-	method?: Method;
-}
 
-
-function request(url: Link);
-function request(url: Link) {
+function request(url: Link, encoding: BufferEncoding = "utf-8") {
 	if (typeof url == "string")
 		url = new URL(url);
 
@@ -30,7 +24,11 @@ function request(url: Link) {
 	return new Promise<string>((r, e) => {
 		const _request = req(url);
 		_request.on("response", response => {
-			response.setEncoding("utf-8");
+			if (response.statusCode > 299 || response.statusCode < 200)
+				return e(response);
+
+			if (encoding)
+				response.setEncoding(encoding);
 
 			const buffers = [];
 

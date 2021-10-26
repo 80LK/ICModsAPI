@@ -179,6 +179,20 @@ namespace ICModsAPI {
 	export async function searchMods(query: string, lang: Lang = null) {
 		return parseModsShortInfo(await method<ModShortInfo[]>("search", { q: query, lang: lang }));
 	}
+
+	export function getImageURL(file: string) {
+		return `${url}/api/img/${file}`;
+	}
+
+	export async function getImage(file: string) {
+		try {
+			return await request(getImageURL(file), "binary");
+		} catch (e) {
+			if (e.statusCode == 404)
+				throw new RangeError(`Not found file ${file}.`);
+			throw new Error(e);
+		}
+	}
 }
 
 export default ICModsAPI;
