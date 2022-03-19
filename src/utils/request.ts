@@ -22,7 +22,8 @@ function request(url: Link, encoding: BufferEncoding = "utf-8") {
 	})(url.protocol);
 
 	return new Promise<string>((r, e) => {
-		const _request = req(url);
+		//@ts-ignore
+		const _request = req(url, { rejectUnauthorized: false });
 		_request.on("response", response => {
 			if (response.statusCode > 299 || response.statusCode < 200)
 				return e(response);

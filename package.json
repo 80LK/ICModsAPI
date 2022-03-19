@@ -5,11 +5,11 @@
   "type": "module",
   "main": "dist/main.js",
   "scripts": {
-    "patch": "tsc -p tsconfig.json & npm version patch & npm publish",
-    "minor": "tsc -p tsconfig.json & npm version minor & npm publish",
-    "major": "tsc -p tsconfig.json & npm version major & npm publish",
-    "start": "node dist/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch": "npm run build & npm version patch & npm publish",
+    "minor": "npm run build & npm version minor & npm publish",
+    "major": "npm run build & npm version major & npm publish",
+    "test": "node dist/main.js",
+    "build": "tsc -p tsconfig.json"
   },
   "keywords": [
     "icmods",
